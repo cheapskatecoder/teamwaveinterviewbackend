@@ -42,20 +42,23 @@ class QueryAPIView(APIView):
             elif key == 'max' or key == 'min' and value and value != "None":
                 if request.data.get('sort') == 'hot' \
                     or request.data.get('sort') == 'week' or request.data.get('sort') == 'month':
-                        print('min max')
-                        query_string += f'{key}="{value}", '
+                        if value:
+                            query_string += f'{key}="{value}", '
                 elif request.data.get('sort') == 'activity' or request.data.get('sort') == 'creation':
-                    query_string += f'{key}={value}, '
+                    if value:
+                        query_string += f'{key}={value}, '
             elif key == 'order' or key == 'sort' or key == 'tag' and value and value != "None":
                 if key == 'page-size':
                     pass
                 else:
-                    query_string += f'{key}="{value}", '
+                    if value:
+                        query_string += f'{key}="{value}", '
             elif key in query_parameters and value and value != "None":
                 if key == 'page-size':
                     pass
                 else:
-                    query_string += f'{key}={value}, '
+                    if value:
+                        query_string += f'{key}={value}, '
 
         if query_string.endswith(', '):
             query_string = query_string[0:-2]
