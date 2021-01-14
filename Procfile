@@ -1,1 +1,1 @@
-web: gunicorn teamwaveinterviewbackend.wsgi
+web: gunicorn teamwaveinterview.wsgi
