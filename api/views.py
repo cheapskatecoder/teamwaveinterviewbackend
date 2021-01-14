@@ -26,6 +26,7 @@ class QueryAPIView(APIView):
         site = StackAPI('stackoverflow')
         query_parameters = ['fromdate', 'todate', 'min', 'sort', 'tag', 'page', 'page-size', 'order', 'max']
         query_string = f''
+        print(request.data)
 
         for key, value in request.data.items():
             if key == 'page-size' and request.data.get('sort') == 'votes' and value and value != "None":
