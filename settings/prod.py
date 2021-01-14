@@ -23,3 +23,7 @@ STATIC_ROOT = [
 
 
 django_heroku.settings(locals())
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = [
+    "https://teamwaveinterview.netlify.app/",
+]
