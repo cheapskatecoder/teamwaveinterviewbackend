@@ -26,7 +26,7 @@ Pygments==2.7.3
 PyJWT==2.0.0
 pytz==2020.5
 requests==2.25.1
-sqlparse==0.4.1
+sqlparse==0.4.2
 StackAPI==0.1.12
 traitlets==5.0.5
 urllib3==1.26.2
